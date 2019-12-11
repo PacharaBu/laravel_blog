@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2019 at 05:59 PM
+-- Generation Time: Dec 11, 2019 at 07:23 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -40,7 +40,7 @@ INSERT INTO `cart` (`orderNumber`) VALUES
 (333),
 (1111),
 (2222),
-(3333);
+(4444);
 
 -- --------------------------------------------------------
 
@@ -389,6 +389,8 @@ INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `pr
 (1111, 'S10_1949', 6, '214.30', 2),
 (2222, 'S10_1678', 1, '95.70', 1),
 (2222, 'S10_2016', 5, '118.94', 2),
+(3333, '2222', 5, '1.00', 2),
+(3333, 'S10_1678', 5, '95.70', 1),
 (10100, 'S18_1749', 30, '136.00', 3),
 (10100, 'S18_2248', 50, '55.09', 2),
 (10100, 'S18_4409', 22, '75.46', 4),
@@ -1779,9 +1781,9 @@ INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `pr
 (10250, 'S32_4289', 50, '62.60', 7),
 (10250, 'S50_1341', 36, '36.66', 8),
 (10250, 'S700_1691', 31, '91.34', 9),
-(10250, 'S700_2466', 35, '90.75', 11),
-(10250, 'S700_2834', 44, '98.48', 3);
+(10250, 'S700_2466', 35, '90.75', 11);
 INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `priceEach`, `orderLineNumber`) VALUES
+(10250, 'S700_2834', 44, '98.48', 3),
 (10250, 'S700_3167', 44, '76.00', 10),
 (10250, 'S700_4002', 38, '65.89', 12),
 (10251, 'S10_1678', 59, '93.79', 2),
@@ -3176,9 +3178,9 @@ INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `pr
 (10398, 'S700_3167', 29, '76.80', 10),
 (10398, 'S700_4002', 36, '62.19', 12),
 (10398, 'S72_1253', 34, '41.22', 1),
-(10399, 'S10_1678', 40, '77.52', 8),
-(10399, 'S10_2016', 51, '99.91', 7);
+(10399, 'S10_1678', 40, '77.52', 8);
 INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `priceEach`, `orderLineNumber`) VALUES
+(10399, 'S10_2016', 51, '99.91', 7),
 (10399, 'S10_4698', 22, '156.86', 6),
 (10399, 'S12_2823', 29, '123.51', 5),
 (10399, 'S18_2625', 30, '51.48', 4),
@@ -3412,6 +3414,7 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`orderNumber`, `orderDate`, `requiredDate`, `shippedDate`, `status`, `comments`, `customerNumber`, `Points_Earn`) VALUES
 (1111, '2019-12-11', '2019-12-20', '2019-12-15', 'Cancelled', 'fff', 103, 0),
 (2222, '2019-12-11', '2019-12-20', '2019-12-29', 'In Process', 'xxx', 103, 0),
+(3333, '2019-12-11', '2019-12-28', '2019-12-28', 'In Process', 'aaaa', 103, 0),
 (10100, '2003-01-06', '2003-01-13', '2003-01-10', 'Shipped', NULL, 363, 0),
 (10101, '2003-01-09', '2003-01-18', '2003-01-11', 'Shipped', 'Check on availability.', 128, 0),
 (10102, '2003-01-10', '2003-01-18', '2003-01-14', 'Shipped', NULL, 181, 0),
@@ -4107,6 +4110,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`productCode`, `productName`, `productLine`, `productScale`, `productVendor`, `productDescription`, `quantityInStock`, `buyPrice`, `MSRP`, `is_active`) VALUES
 ('1111', 'XXXXX', 'Ships', 'XXXXX', 'XXXXX', 'XXXXXX', 12, '1.11', '1.00', 0),
+('2222', 'xxx', 'Ships', 'xxxx', 'xxxxxx', 'xxxxxx', 1, '1.11', '1.00', 1),
 ('S10_1678', '1969 Harley Davidson Ultimate Chopper', 'Motorcycles', '1:10', 'Min Lin Diecast', 'This replica features working kickstand, front suspension, gear-shift lever, footbrake lever, drive chain, wheels and steering. All parts are particularly delicate due to their precise scale and require special care and attention.', 7933, '48.81', '95.70', 1),
 ('S10_1949', '1952 Alpine Renault 1300', 'Classic Cars', '1:10', 'Classic Metal Creations', 'Turnable front wheels; steering function; detailed interior; detailed engine; opening hood; opening trunk; opening doors; and detailed chassis.', 7305, '98.58', '214.30', 1),
 ('S10_2016', '1996 Moto Guzzi 1100i', 'Motorcycles', '1:10', 'Highway 66 Mini Classics', 'Official Moto Guzzi logos and insignias, saddle bags located on side of motorcycle, detailed engine, working steering, working suspension, two leather seats, luggage rack, dual exhaust pipes, small saddle bag located on handle bars, two-tone paint with chrome accents, superior die-cast detail , rotating wheels , working kick stand, diecast metal with plastic parts and baked enamel finish.', 6625, '68.99', '118.94', 1),
@@ -4237,8 +4241,25 @@ CREATE TABLE `product_in_cart` (
 --
 
 INSERT INTO `product_in_cart` (`orderNumber`, `productCode`, `productName`, `quantityOrdered`, `priceEach`) VALUES
-(333, 'S10_1678', '1969 Harley Davidson Ultimate Chopper', 10, '95.70'),
-(3333, 'S10_1678', '1969 Harley Davidson Ultimate Chopper', 5, '95.70');
+(333, 'S10_1678', '1969 Harley Davidson Ultimate Chopper', 10, '95.70');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `promotion`
+--
+
+CREATE TABLE `promotion` (
+  `productCode` varchar(15) NOT NULL,
+  `expiry date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `promotion`
+--
+
+INSERT INTO `promotion` (`productCode`, `expiry date`) VALUES
+('2222', '2019-12-29');
 
 --
 -- Indexes for dumped tables
@@ -4334,6 +4355,12 @@ ALTER TABLE `productlines`
 ALTER TABLE `products`
   ADD PRIMARY KEY (`productCode`),
   ADD KEY `productLine` (`productLine`);
+
+--
+-- Indexes for table `promotion`
+--
+ALTER TABLE `promotion`
+  ADD PRIMARY KEY (`productCode`);
 
 --
 -- AUTO_INCREMENT for dumped tables
