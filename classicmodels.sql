@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2019 at 10:08 PM
+-- Generation Time: Dec 11, 2019 at 10:21 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -76,7 +76,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customerNumber`, `customerName`, `contactLastName`, `contactFirstName`, `phone`, `addressLine1`, `addressLine2`, `city`, `state`, `postalCode`, `country`, `salesRepEmployeeNumber`, `creditLimit`, `Total_Point`, `is_active`) VALUES
-(103, 'Atelier graphique', 'Schmitt', 'Carine ', '40.32.2555', '54, rue Royale', NULL, 'Nantes', NULL, '44000', 'France', 1370, '21000.00', 0, 1),
+(103, 'Atelier graphique', 'Schmitt', 'Carine ', '40.32.2555', '54, rue Royale', NULL, 'Nantes', NULL, '44000', 'France', 1370, '21000.00', 3, 1),
 (112, 'Signal Gift Stores', 'King', 'Jean', '7025551838', '8489 Strong St.', NULL, 'Las Vegas', 'NV', '83030', 'USA', 1166, '71800.00', 0, 1),
 (114, 'Australian Collectors, Co.', 'Ferguson', 'Peter', '03 9520 4555', '636 St Kilda Road', 'Level 3', 'Melbourne', 'Victoria', '3004', 'Australia', 1611, '117300.00', 0, 1),
 (119, 'La Rochelle Gifts', 'Labrune', 'Janine ', '40.67.8555', '67, rue des Cinquante Otages', NULL, 'Nantes', NULL, '44000', 'France', 1370, '118200.00', 0, 1),
@@ -401,6 +401,7 @@ INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `pr
 (3333, 'S10_1678', 5, '95.70', 1),
 (4444, '4444', 10, '1.00', 1),
 (5555, '4444', 5, '1.00', 1),
+(7878, 'S10_1678', 2, '95.70', 1),
 (9090, '4444', 2, '1.00', 2),
 (9090, '555', 1, '1.00', 1),
 (9999, '4444', 2, '1.00', 1),
@@ -1786,9 +1787,9 @@ INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `pr
 (10249, 'S72_1253', 32, '49.16', 3),
 (10250, 'S18_1662', 45, '148.23', 14),
 (10250, 'S18_2581', 27, '84.48', 4),
-(10250, 'S24_1785', 31, '95.20', 6),
-(10250, 'S24_2000', 32, '63.22', 1);
+(10250, 'S24_1785', 31, '95.20', 6);
 INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `priceEach`, `orderLineNumber`) VALUES
+(10250, 'S24_2000', 32, '63.22', 1),
 (10250, 'S24_3949', 40, '61.42', 13),
 (10250, 'S24_4278', 37, '72.45', 5),
 (10250, 'S32_1374', 31, '99.89', 2),
@@ -3183,9 +3184,9 @@ INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `pr
 (10398, 'S24_3949', 41, '56.64', 2),
 (10398, 'S24_4278', 45, '65.93', 14),
 (10398, 'S32_4289', 22, '60.54', 4),
-(10398, 'S50_1341', 49, '38.84', 5),
-(10398, 'S700_1691', 47, '78.55', 6);
+(10398, 'S50_1341', 49, '38.84', 5);
 INSERT INTO `orderdetails` (`orderNumber`, `productCode`, `quantityOrdered`, `priceEach`, `orderLineNumber`) VALUES
+(10398, 'S700_1691', 47, '78.55', 6),
 (10398, 'S700_2047', 36, '75.13', 7),
 (10398, 'S700_2466', 22, '98.72', 8),
 (10398, 'S700_2834', 23, '102.04', 9),
@@ -3432,6 +3433,7 @@ INSERT INTO `orders` (`orderNumber`, `orderDate`, `requiredDate`, `shippedDate`,
 (3333, '2019-12-11', '2019-12-28', '2019-12-28', 'In Process', 'aaaa', 103, 0),
 (4444, '2019-12-11', '2019-12-28', '2019-12-21', 'In Process', 'aaaa', 103, 0),
 (5555, '2019-12-11', '2019-12-21', '2019-12-13', 'In Process', 'aa', 103, 0),
+(7878, '2019-12-11', '2019-12-21', '2019-12-21', 'In Process', 'xxx', 103, 0),
 (9090, '2019-12-11', '2019-12-21', '2019-12-21', 'In Process', 'xxx', 103, 0),
 (9999, '2019-12-11', '2019-12-28', '2019-12-28', 'In Process', 'xxx', 103, 0),
 (10100, '2003-01-06', '2003-01-13', '2003-01-10', 'Shipped', NULL, 363, 0),
@@ -4136,7 +4138,7 @@ INSERT INTO `products` (`productCode`, `productName`, `productLine`, `productSca
 ('555', '5555', 'Ships', '1:1', '5555', '55555', 0, '1.00', '1.00', 'T', 1),
 ('919', 'xxxxxx', 'Ships', 'XXXXX', 'XXXX', 'xxxxxxxx', 50, '1.00', '1.23', 'F', 1),
 ('aaaaa', 'aaaaa', 'Ships', '1:10', 'aaaa', 'aaaaaa', 0, '1.11', '95.70', 'F', 1),
-('S10_1678', '1969 Harley Davidson Ultimate Chopper', 'Motorcycles', '1:10', 'Min Lin Diecast', 'This replica features working kickstand, front suspension, gear-shift lever, footbrake lever, drive chain, wheels and steering. All parts are particularly delicate due to their precise scale and require special care and attention.', 7933, '48.81', '95.70', 'F', 1),
+('S10_1678', '1969 Harley Davidson Ultimate Chopper', 'Motorcycles', '1:10', 'Min Lin Diecast', 'This replica features working kickstand, front suspension, gear-shift lever, footbrake lever, drive chain, wheels and steering. All parts are particularly delicate due to their precise scale and require special care and attention.', 7931, '48.81', '95.70', 'F', 1),
 ('S10_1949', '1952 Alpine Renault 1300', 'Classic Cars', '1:10', 'Classic Metal Creations', 'Turnable front wheels; steering function; detailed interior; detailed engine; opening hood; opening trunk; opening doors; and detailed chassis.', 7305, '98.58', '214.30', 'F', 1),
 ('S10_2016', '1996 Moto Guzzi 1100i', 'Motorcycles', '1:10', 'Highway 66 Mini Classics', 'Official Moto Guzzi logos and insignias, saddle bags located on side of motorcycle, detailed engine, working steering, working suspension, two leather seats, luggage rack, dual exhaust pipes, small saddle bag located on handle bars, two-tone paint with chrome accents, superior die-cast detail , rotating wheels , working kick stand, diecast metal with plastic parts and baked enamel finish.', 6625, '68.99', '118.94', 'F', 1),
 ('S10_4698', '2003 Harley-Davidson Eagle Drag Bike', 'Motorcycles', '1:10', 'Red Start Diecast', 'Model features, official Harley Davidson logos and insignias, detachable rear wheelie bar, heavy diecast metal with resin parts, authentic multi-color tampo-printed graphics, separate engine drive belts, free-turning front fork, rotating tires and rear racing slick, certificate of authenticity, detailed engine, display stand\r\n, precision diecast replica, baked enamel finish, 1:10 scale model, removable fender, seat and tank cover piece for displaying the superior detail of the v-twin engine', 5582, '91.02', '193.66', 'F', 1),
