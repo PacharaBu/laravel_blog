@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2019 at 05:57 PM
+-- Generation Time: Dec 10, 2019 at 04:23 PM
 -- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- PHP Version: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -211,7 +211,8 @@ INSERT INTO `employees` (`employeeNumber`, `lastName`, `firstName`, `extension`,
 (1056, 'Patterson', 'Mary', 'x4611', 'mpatterso@classicmodelcars.com', '1', 1002, 'VP Sales'),
 (1076, 'Firrelli', 'Jeff', 'x9273', 'jfirrelli@classicmodelcars.com', '1', 1002, 'VP Marketing'),
 (1088, 'Patterson', 'William', 'x4871', 'wpatterson@classicmodelcars.com', '6', 1056, 'Sales Manager (APAC)'),
-(1102, 'Bondur', 'Gerard', 'x5408', 'gbondur@classicmodelcars.com', '4', 1056, 'Sale Manager (EMEA)'),
+(1102, 'Bondur', 'Gerard', 'x5408', 'gbondur@classicmodelcars.com', '4', 1056, 'Sales Manager (EMEA)'),
+(1111, 'aaaa', 'aaaa', 'aaaa', 'aaaa@aaa.com', '1', 1002, 'Sales Manager (NA)'),
 (1143, 'Bow', 'Anthony', 'x5428', 'abow@classicmodelcars.com', '1', 1056, 'Sales Manager (NA)'),
 (1165, 'Jennings', 'Leslie', 'x3291', 'ljennings@classicmodelcars.com', '1', 1143, 'Sales Rep'),
 (1166, 'Thompson', 'Leslie', 'x4065', 'lthompson@classicmodelcars.com', '1', 1143, 'Sales Rep'),
@@ -288,7 +289,8 @@ INSERT INTO `login` (`id`, `employeeNumber`, `password`, `remember_token`, `crea
 (23, '1619', '$2y$10$acUgYWUgqcUIpWhb4NWvF.jsXxSdp/UUwj1pw/P8audLnFRnHMFWW', NULL, '2019-11-07 09:55:33', '2019-11-07 09:55:33'),
 (24, '1621', '$2y$10$cx/e9Q7MPvvF/ohYTSip7ennhfFZS58lf/LVLFGjYCFGcVBxSTCQi', NULL, '2019-11-07 09:55:53', '2019-11-07 09:55:53'),
 (25, '1625', '$2y$10$g8xjmVP6Nep78zQW29Qv3.XmUvZm9K51QACVZGGdbrO1727nQav1G', NULL, '2019-11-07 09:56:04', '2019-11-07 09:56:04'),
-(26, '1702', '$2y$10$blHLtuzF1GZl7l/g7qrtEuUvzHeImHCwTEY9m4Xqj9KBE9zU30YM.', NULL, '2019-11-07 09:56:16', '2019-11-07 09:56:16');
+(26, '1702', '$2y$10$blHLtuzF1GZl7l/g7qrtEuUvzHeImHCwTEY9m4Xqj9KBE9zU30YM.', NULL, '2019-11-07 09:56:16', '2019-11-07 09:56:16'),
+(42, '1111', '$2y$10$lDmzueP6EWL0lO6XCemUKu8ceHzr2vLe.W0XZxO2XfjBE17y51QPC', NULL, '2019-12-09 23:46:01', '2019-12-09 23:46:01');
 
 -- --------------------------------------------------------
 
@@ -4075,6 +4077,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`productCode`, `productName`, `productLine`, `productScale`, `productVendor`, `productDescription`, `quantityInStock`, `buyPrice`, `MSRP`) VALUES
+('1111', 'XXXXX', 'Ships', 'XXXXX', 'XXXXX', 'XXXXXX', 12, '1.11', '1.00'),
 ('S10_1678', '1969 Harley Davidson Ultimate Chopper', 'Motorcycles', '1:10', 'Min Lin Diecast', 'This replica features working kickstand, front suspension, gear-shift lever, footbrake lever, drive chain, wheels and steering. All parts are particularly delicate due to their precise scale and require special care and attention.', 7933, '48.81', '95.70'),
 ('S10_1949', '1952 Alpine Renault 1300', 'Classic Cars', '1:10', 'Classic Metal Creations', 'Turnable front wheels; steering function; detailed interior; detailed engine; opening hood; opening trunk; opening doors; and detailed chassis.', 7305, '98.58', '214.30'),
 ('S10_2016', '1996 Moto Guzzi 1100i', 'Motorcycles', '1:10', 'Highway 66 Mini Classics', 'Official Moto Guzzi logos and insignias, saddle bags located on side of motorcycle, detailed engine, working steering, working suspension, two leather seats, luggage rack, dual exhaust pipes, small saddle bag located on handle bars, two-tone paint with chrome accents, superior die-cast detail , rotating wheels , working kick stand, diecast metal with plastic parts and baked enamel finish.', 6625, '68.99', '118.94'),
@@ -4295,7 +4298,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `migrations`
