@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2019 at 03:19 PM
+-- Generation Time: Dec 11, 2019 at 05:59 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -31,6 +31,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `cart` (
   `orderNumber` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`orderNumber`) VALUES
+(333),
+(1111),
+(2222),
+(3333);
 
 -- --------------------------------------------------------
 
@@ -3400,7 +3410,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`orderNumber`, `orderDate`, `requiredDate`, `shippedDate`, `status`, `comments`, `customerNumber`, `Points_Earn`) VALUES
-(1111, '2019-12-11', '2019-12-20', '2019-12-15', 'In Process', 'xxx', 103, 0),
+(1111, '2019-12-11', '2019-12-20', '2019-12-15', 'Cancelled', 'fff', 103, 0),
 (2222, '2019-12-11', '2019-12-20', '2019-12-29', 'In Process', 'xxx', 103, 0),
 (10100, '2003-01-06', '2003-01-13', '2003-01-10', 'Shipped', NULL, 363, 0),
 (10101, '2003-01-09', '2003-01-18', '2003-01-11', 'Shipped', 'Check on availability.', 128, 0),
@@ -3759,6 +3769,7 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`customerNumber`, `checkNumber`, `paymentDate`, `amount`) VALUES
+(103, '1', '2019-12-11', '11.00'),
 (103, 'HQ336336', '2004-10-19', '6066.78'),
 (103, 'JM555205', '2003-06-05', '14571.44'),
 (103, 'OM314933', '2004-12-18', '1676.14'),
@@ -4220,6 +4231,14 @@ CREATE TABLE `product_in_cart` (
   `quantityOrdered` int(11) NOT NULL,
   `priceEach` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product_in_cart`
+--
+
+INSERT INTO `product_in_cart` (`orderNumber`, `productCode`, `productName`, `quantityOrdered`, `priceEach`) VALUES
+(333, 'S10_1678', '1969 Harley Davidson Ultimate Chopper', 10, '95.70'),
+(3333, 'S10_1678', '1969 Harley Davidson Ultimate Chopper', 5, '95.70');
 
 --
 -- Indexes for dumped tables
