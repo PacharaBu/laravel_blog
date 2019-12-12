@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2019 at 04:48 AM
+-- Generation Time: Dec 12, 2019 at 08:34 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.32
 
@@ -257,7 +257,8 @@ INSERT INTO `employees` (`employeeNumber`, `lastName`, `firstName`, `extension`,
 (1619, 'King', 'Tom', 'x103', 'tking@classicmodelcars.com', '6', 1088, 'Sales Rep', 1),
 (1621, 'Nishi', 'Mami', 'x101', 'mnishi@classicmodelcars.com', '5', 1056, 'Sales Rep', 1),
 (1625, 'Kato', 'Yoshimi', 'x102', 'ykato@classicmodelcars.com', '5', 1621, 'Sales Rep', 1),
-(1702, 'Gerard', 'Martin', 'x2312', 'mgerard@classicmodelcars.com', '4', 1102, 'Sales Rep', 1);
+(1702, 'Gerard', 'Martin', 'x2312', 'mgerard@classicmodelcars.com', '4', 1102, 'Sales Rep', 1),
+(2222, 'xxxxx', 'xxxx', 'xxxx', 'xxxx@xx.com', '1', 1002, 'Sales Rep', 0);
 
 -- --------------------------------------------------------
 
@@ -4133,13 +4134,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`productCode`, `productName`, `productLine`, `productScale`, `productVendor`, `productDescription`, `quantityInStock`, `buyPrice`, `MSRP`, `is_preorder`, `is_active`) VALUES
+('101', 'porn', 'Ships', '1:10', '4444', 'porn for test', 0, '1.11', '1.01', 'T', 0),
 ('1111', 'XXXXX', 'Ships', 'XXXXX', 'XXXXX', 'XXXXXX', 12, '1.11', '1.00', 'F', 0),
 ('1212', '1111', 'Ships', '1:1', 'GG', '2222222', 0, '1.00', '9.00', 'F', 0),
-('2222', 'xxx', 'Ships', 'xxxx', 'xxxxxx', 'xxxxxx', 0, '1.11', '1.00', 'F', 1),
-('4444', '4444', 'Ships', '4444', '4444', '4444', 57, '1.00', '1.00', 'F', 1),
-('555', '5555', 'Ships', '1:1', '5555', '55555', 0, '1.00', '1.00', 'T', 1),
-('919', 'xxxxxx', 'Ships', 'XXXXX', 'XXXX', 'xxxxxxxx', 50, '1.00', '1.23', 'F', 1),
-('aaaaa', 'aaaaa', 'Ships', '1:10', 'aaaa', 'aaaaaa', 0, '1.11', '95.70', 'F', 1),
+('2222', 'x2', 'Ships', 'xxxx', 'xxxxxx', 'xxxxxx', 0, '1.11', '1.00', 'F', 0),
+('2223', 'x3', 'Classic Cars', '1:10', 'xxxxxx', 'dis is a test', 10, '50.00', '45.49', 'F', 0),
+('4444', '4444', 'Ships', '4444', '4444', '4444', 57, '1.00', '1.00', 'F', 0),
+('555', '5555', 'Ships', '1:1', '5555', '55555', 10, '1.00', '2.00', 'F', 0),
+('919', 'xxxxxx', 'Ships', 'XXXXX', 'XXXX', 'xxxxxxxx', 50, '1.00', '1.23', 'F', 0),
+('aaaaa', 'aaaaa', 'Ships', '1:10', 'aaaa', 'aaaaaa', 0, '1.11', '95.70', 'F', 0),
+('asasas', 'asasasas', 'Ships', 'asasas', 'asasas', 'asasasa', 1111, '1.00', '1.23', 'F', 0),
 ('S10_1678', '1969 Harley Davidson Ultimate Chopper', 'Motorcycles', '1:10', 'Min Lin Diecast', 'This replica features working kickstand, front suspension, gear-shift lever, footbrake lever, drive chain, wheels and steering. All parts are particularly delicate due to their precise scale and require special care and attention.', 7929, '48.81', '95.70', 'F', 1),
 ('S10_1949', '1952 Alpine Renault 1300', 'Classic Cars', '1:10', 'Classic Metal Creations', 'Turnable front wheels; steering function; detailed interior; detailed engine; opening hood; opening trunk; opening doors; and detailed chassis.', 7305, '98.58', '214.30', 'F', 1),
 ('S10_2016', '1996 Moto Guzzi 1100i', 'Motorcycles', '1:10', 'Highway 66 Mini Classics', 'Official Moto Guzzi logos and insignias, saddle bags located on side of motorcycle, detailed engine, working steering, working suspension, two leather seats, luggage rack, dual exhaust pipes, small saddle bag located on handle bars, two-tone paint with chrome accents, superior die-cast detail , rotating wheels , working kick stand, diecast metal with plastic parts and baked enamel finish.', 6625, '68.99', '118.94', 'F', 1),
@@ -4249,7 +4253,8 @@ INSERT INTO `products` (`productCode`, `productName`, `productLine`, `productSca
 ('S700_3962', 'The Queen Mary', 'Ships', '1:700', 'Welly Diecast Productions', 'Exact replica. Wood and Metal. Many extras including rigging, long boats, pilot house, anchors, etc. Comes with three masts, all square-rigged.', 5088, '53.63', '99.31', 'F', 1),
 ('S700_4002', 'American Airlines: MD-11S', 'Planes', '1:700', 'Second Gear Diecast', 'Polished finish. Exact replia with official logos and insignias and retractable wheels', 8820, '36.27', '74.03', 'F', 1),
 ('S72_1253', 'Boeing X-32A JSF', 'Planes', '1:72', 'Motor City Art Classics', '10\" Wingspan with retractable landing gears.Comes with pilot', 4857, '32.77', '49.66', 'F', 1),
-('S72_3212', 'Pont Yacht', 'Ships', '1:72', 'Unimax Art Galleries', 'Measures 38 inches Long x 33 3/4 inches High. Includes a stand.\r\nMany extras including rigging, long boats, pilot house, anchors, etc. Comes with 2 masts, all square-rigged', 414, '33.30', '54.60', 'F', 1);
+('S72_3212', 'Pont Yacht', 'Ships', '1:72', 'Unimax Art Galleries', 'Measures 38 inches Long x 33 3/4 inches High. Includes a stand.\r\nMany extras including rigging, long boats, pilot house, anchors, etc. Comes with 2 masts, all square-rigged', 414, '33.30', '54.60', 'F', 1),
+('ssss', 'sssss', 'Ships', 'sssss', 'asasas', 'sssssss', 10, '77.00', '1.00', 'F', 0);
 
 -- --------------------------------------------------------
 
@@ -4416,7 +4421,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `migrations`
